@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legacy Network</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+font-family:Inter,Arial,sans-serif;
+background:linear-gradient(90deg,#140014 0%,#03060f 50%,#00181f 100%);
+color:#fff;
+overflow-x:hidden;
+}
+#particles{position:fixed;inset:0;z-index:0}
+.content{position:relative;z-index:1}
+nav{
+position:sticky;top:0;
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(10px);
+}
+.logo{font-size:2rem;font-weight:900}
+.logo span{color:#2EA8FF;text-shadow:0 0 10px #2EA8FF,0 0 25px #17D6FF}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{text-decoration:none;color:#ddd;font-weight:700}
+nav a:hover{color:#2EA8FF}
+section{padding:100px 8%}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.badge{display:inline-block;padding:10px 18px;border-radius:999px;border:1px solid #00ff88;color:#00ff88}
+h1{font-size:6rem;margin:20px 0}
+.blue{color:#2EA8FF;text-shadow:0 0 20px #2EA8FF,0 0 40px #17D6FF}
+.subtitle{max-width:800px;color:#b8c7d6;font-size:1.2rem;margin:auto}
+h2{text-align:center;font-size:3rem;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:24px;
+backdrop-filter:blur(10px);
+}
+.card h3{color:#2EA8FF;margin-bottom:12px}
+.price{font-size:2rem;font-weight:bold;margin:10px 0}
+.status-item{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.good{color:#00ff88;font-weight:bold}
+.footer{text-align:center;color:#9fb2c6;padding:40px}
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<div class="content">
+<nav>
+<div class="logo">Legacy <span>Network</span></div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#status">Status</a></li>
+<li><a href="#community">Community</a></li>
+</ul>
+</nav>
+
+<section id="home" class="hero">
+<div>
+<div class="badge">● MAIN VPS ONLINE</div>
+
+<!-- EDIT MAIN TITLE -->
+<h1>Legacy <span class="blue">Network</span></h1>
+
+<!-- EDIT HERO DESCRIPTION -->
+<p class="subtitle">Premium infrastructure, hosting, and community services built for performance and reliability.</p>
+</div>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>VPS Hosting</h3>
+<p><!-- EDIT --> High-performance virtual servers with flexible resources.</p>
+</div>
+
+<div class="card">
+<h3>Dedicated Servers</h3>
+<p><!-- EDIT --> Enterprise-grade dedicated hardware for demanding workloads.</p>
+</div>
+
+<div class="card">
+<h3>Cloud Infrastructure</h3>
+<p><!-- EDIT --> Scalable cloud deployments and managed environments.</p>
+</div>
+
+<div class="card">
+<h3>Security & Monitoring</h3>
+<p><!-- EDIT --> Uptime tracking, monitoring, and security management.</p>
+</div>
+
+<div class="card">
+<h3>Game Servers</h3>
+<p><!-- EDIT --> Reliable hosting for gaming communities and events.</p>
+</div>
+
+<div class="card">
+<h3>Community Support</h3>
+<p><!-- EDIT --> Fast support channels and community-driven assistance.</p>
+</div>
+
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Starter</h3>
+<div class="price">$9/mo</div>
+<p>Edit this plan description.</p>
+</div>
+
+<div class="card">
+<h3>Professional</h3>
+<div class="price">$29/mo</div>
+<p>Edit this plan description.</p>
+</div>
+
+<div class="card">
+<h3>Enterprise</h3>
+<div class="price">$99/mo</div>
+<p>Edit this plan description.</p>
+</div>
+</div>
+</section>
+
+<section id="status">
+<h2>Network Status</h2>
+
+<div class="card">
+<div class="status-item"><span>Main VPS</span><span class="good">Online</span></div>
+<div class="status-item"><span>Payment API</span><span class="good">Operational</span></div>
+<div class="status-item"><span>Layer 4 Network</span><span class="good">Optimal</span></div>
+<div class="status-item"><span>Layer 7 Nodes</span><span class="good">Stable</span></div>
+</div>
+</section>
+
+<section id="community">
+<h2>Community</h2>
+<div class="grid">
+<div class="card"><h3>Discord</h3><p>Edit invite information here.</p></div>
+<div class="card"><h3>Announcements</h3><p>Edit update information here.</p></div>
+<div class="card"><h3>Support</h3><p>Edit support information here.</p></div>
+</div>
+</section>
+
+<div class="footer">
+© Legacy Network — All text is editable inside this file.
+</div>
+</div>
+
+<script>
+const c=document.getElementById('particles');
+const x=c.getContext('2d');
+let w,h,p=[];
+function r(){w=c.width=innerWidth;h=c.height=innerHeight}
+r();addEventListener('resize',r);
+for(let i=0;i<90;i++)p.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
+(function a(){
+x.clearRect(0,0,w,h);
+for(const n of p){
+n.x+=n.vx;n.y+=n.vy;
+if(n.x<0||n.x>w)n.vx*=-1;
+if(n.y<0||n.y>h)n.vy*=-1;
+x.beginPath();x.arc(n.x,n.y,2,0,6.28);
+x.fillStyle='#17D6FF';x.fill();
+}
+for(let i=0;i<p.length;i++){
+for(let j=i+1;j<p.length;j++){
+let dx=p[i].x-p[j].x,dy=p[i].y-p[j].y,d=Math.hypot(dx,dy);
+if(d<170){
+x.strokeStyle=`rgba(23,214,255,${1-d/170})`;
+x.beginPath();x.moveTo(p[i].x,p[i].y);x.lineTo(p[j].x,p[j].y);x.stroke();
+}
+}
+}
+requestAnimationFrame(a);
+})();
+</script>
+</body>
+</html>
